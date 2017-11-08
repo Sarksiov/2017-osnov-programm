@@ -1,19 +1,21 @@
 import sys
 for line in sys.stdin.readlines():
+	line=line.strip()
 	if line!='':
-		print(line)
+		print('# text = %s' % (line))
 		newline=''
-		puntc=['.',',','!','?',':',';','(',')','[',']''"']
+		punct=['.',',','!','?',':',';','(',')','[',']''"']
 		for x in line:
 			if x in punct:
 				newline=newline+' '+x+' '
 			else:
-				newline+newline+x
+				newline=newline+x
 		row=newline.split(' ')
-		token_id=0
+		token_id=1
 		for token in row:
-			if tokem!='':
-				print('%\t%s\t_\t_\t_\t_\t_\t_\t_\t_' % (token_id, token))
+			token= token.strip()
+			if token!='':
+				print('%d\t%s\t_\t_\t_\t_\t_\t_\t_\t_' % (token_id, token))
 				token_id=token_id+1
-			print()
+		print()
 		
